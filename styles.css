@@ -590,7 +590,7 @@ footer {
 
 .form-button-card h3 {
     margin: 0 0 14px;
-    color: #202124;
+    color: #FF6B00;
     font-size: 1.5rem;
 }
 
@@ -608,7 +608,7 @@ footer {
     gap: 12px;
     padding: 15px 24px;
     border-radius: 8px;
-    background: #6b3fc1;
+    background: #FF6B00;
     color: #ffffff;
     font-weight: 700;
     text-decoration: none;
