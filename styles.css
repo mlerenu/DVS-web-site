@@ -47,11 +47,17 @@ header {
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--dark);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: -0.5px;
+    line-height: 0;
+}
+
+.logo img {
+    display: block;
+    width: 130px;
+    height: 55px;
+    object-fit: contain;
 }
 
 .logo span {
@@ -447,13 +453,19 @@ footer {
     }
 
     .nav-menu {
-        display: none; /* En versión final se despliega con JS */
+        display: none;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
     }
+
+    .logo img {
+        width: 110px;
+        height: 45px;
+    }
 }
+
 /* =========================
    Productos destacados
 ========================= */
@@ -528,4 +540,10 @@ footer {
     text-decoration: none;
 }
 
+.footer-logo img {
+    display: block;
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+}
 
