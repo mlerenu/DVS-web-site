@@ -547,3 +547,22 @@ footer {
     object-fit: contain;
 }
 
+.contact-details a {
+    color: var(--body-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+    color: var(--primary);
+}
+
+.footer-contact-link {
+    color: #A0A0A0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-link:hover {
+    color: var(--primary);
+}
