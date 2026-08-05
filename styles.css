@@ -350,6 +350,30 @@ section {
 .client-logo:hover img {
     transform: scale(1.1);
 }
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+.client-card {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+.client-card img {
+    display: block;
+    width: 180px;
+    height: 90px;
+    object-fit: contain;
+    object-position: center;
+}
 
 /* Contact Section */
 .contact-grid {
