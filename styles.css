@@ -576,18 +576,6 @@ footer {
     text-align: center;
 }
 
-.form-button-icon {
-    display: grid;
-    width: 58px;
-    height: 58px;
-    margin: 0 auto 24px;
-    place-items: center;
-    border-radius: 16px;
-    background: #FF6B00;
-    color: #ffffff;
-    font-size: 1.6rem;
-}
-
 .form-button-card h3 {
     margin: 0 0 14px;
     color: #FF6B00;
