@@ -495,7 +495,7 @@ footer {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 320px;
+    height: 420px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -504,31 +504,21 @@ footer {
 }
 
 .product-image img {
+    display: block;
     width: 100%;
     height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center top;
-}
-
-/* Prendas superiores: prioriza cuello, hombros y torso */
-.product-image img.product-img-top {
-    object-fit: cover;
-    object-position: center top;
-}
-
-/* Mameluco: muestra la prenda completa */
-.product-image img.product-img-full {
     object-fit: contain;
     object-position: center;
-    padding: 8px;
+    padding: 10px;
 }
 
-/* Pantalón cargo: muestra el pantalón completo */
+/* Todas las imágenes de productos se muestran completas */
+.product-image img.product-img-top,
+.product-image img.product-img-full,
 .product-image img.product-img-pants {
     object-fit: contain;
     object-position: center;
-    padding: 8px;
+    padding: 10px;
 }
 
 
