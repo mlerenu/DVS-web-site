@@ -495,32 +495,17 @@ footer {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 420px;
+    height: 290px;
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: #eef0f2;
 }
 
 .product-image img {
-    display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center;
-    padding: 10px;
+    display: block;
+    object-fit: cover;
 }
-
-/* Todas las imágenes de productos se muestran completas */
-.product-image img.product-img-top,
-.product-image img.product-img-full,
-.product-image img.product-img-pants {
-    object-fit: contain;
-    object-position: center;
-    padding: 10px;
-}
-
 
 .product-content {
     display: flex;
