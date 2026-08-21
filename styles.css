@@ -654,10 +654,6 @@ footer {
     text-transform: uppercase;
     box-shadow: 0 4px 12px rgba(255, 107, 0, 0.12);
 }
-.product-card {
-  overflow: hidden;
-}
-
 .product-card img {
   transition: transform 0.3s ease;
 }
