@@ -736,13 +736,12 @@ footer {
 
 .whatsapp-float svg {
     display: block;
-    width: 37px;
-    height: 37px;
-    fill: white;
-    transform: translate(2px, 2px);
+    width: 38px;
+    height: 38px;
+    fill: #ffffff;
+    transform: none;
+    flex-shrink: 0;
 }
-
-
 @media (max-width: 600px) {
     .whatsapp-float {
         right: 16px;
@@ -752,9 +751,7 @@ footer {
     }
 
     .whatsapp-float svg {
-        width: 33px;
-        height: 33px;
-        transform: translate(1px, 1px);
+        width: 35px;
+        height: 35px;
     }
 }
-
