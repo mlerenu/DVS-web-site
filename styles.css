@@ -665,3 +665,39 @@ footer {
 .product-card:hover img {
   transform: scale(1.08);
 }
+/* Datos de contacto del footer */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.footer-contact-icon {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+    margin-top: 2px;
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer-contact-item:nth-of-type(2) .footer-contact-icon {
+    fill: var(--primary);
+    stroke: none;
+}
+
+.footer-contact-item span,
+.footer-contact-item a {
+    color: #A0A0A0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-item a:hover {
+    color: var(--primary);
+}
