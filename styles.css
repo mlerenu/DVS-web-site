@@ -718,4 +718,49 @@ footer {
 .footer-contact-item a:hover {
     color: var(--primary);
 }
+.whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float svg {
+    width: 36px;
+    height: 36px;
+    fill: white;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.whatsapp-float:focus-visible {
+    outline: 3px solid #111;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .whatsapp-float svg {
+        width: 32px;
+        height: 32px;
+    }
+}
 
