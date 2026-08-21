@@ -665,37 +665,54 @@ footer {
 .product-card:hover img {
   transform: scale(1.08);
 }
-/* Datos de contacto del footer */
 .footer-contact-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
     margin-bottom: 16px;
     line-height: 1.5;
 }
 
-.footer-contact-icon {
-    width: 21px;
-    height: 21px;
-    flex: 0 0 21px;
-    margin-top: 2px;
-    fill: none;
-    stroke: var(--primary);
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.contact-icon {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1;
 }
 
-.footer-contact-item:nth-of-type(2) .footer-contact-icon {
-    fill: var(--primary);
-    stroke: none;
+.location-icon {
+    font-size: 28px;
+    transform: rotate(-20deg);
 }
 
-.footer-contact-item span,
+.whatsapp-icon {
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    font-size: 0;
+    position: relative;
+}
+
+.whatsapp-icon::after {
+    content: "☎";
+    font-size: 13px;
+    color: var(--primary);
+    transform: rotate(-18deg);
+}
+
+.mail-icon {
+    font-size: 25px;
+}
+
+.footer-contact-item span:not(.contact-icon),
 .footer-contact-item a {
     color: #A0A0A0;
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
 .footer-contact-item a:hover {
