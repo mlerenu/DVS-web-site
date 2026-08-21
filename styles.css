@@ -640,3 +640,17 @@ footer {
         min-height: auto;
     }
 }
+/* Subtítulo de productos destacados */
+.section-subtitle {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 107, 0, 0.1);
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.12);
+}
