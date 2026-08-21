@@ -735,20 +735,13 @@ footer {
 }
 
 .whatsapp-float svg {
-    width: 36px;
-    height: 36px;
+    display: block;
+    width: 37px;
+    height: 37px;
     fill: white;
+    transform: translate(1px, 1px);
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-}
-
-.whatsapp-float:focus-visible {
-    outline: 3px solid #111;
-    outline-offset: 4px;
-}
 
 @media (max-width: 600px) {
     .whatsapp-float {
@@ -759,8 +752,9 @@ footer {
     }
 
     .whatsapp-float svg {
-        width: 32px;
-        height: 32px;
+        width: 33px;
+        height: 33px;
+        transform: translate(1px, 1px);
     }
 }
 
