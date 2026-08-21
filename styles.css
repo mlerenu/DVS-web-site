@@ -614,3 +614,29 @@ footer {
     font-size: 1.25rem;
     line-height: 1;
 }
+/* Tablets */
+@media (min-width: 577px) and (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .product-image {
+        height: 260px;
+    }
+
+    .product-content {
+        padding: 22px 20px 24px;
+    }
+
+    .product-content p {
+        min-height: auto;
+    }
+}
