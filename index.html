@@ -219,7 +219,8 @@
 
             <div class="products-grid">
 
-                <article class="product-card" data-id="buzo-basico" data-category="abrigo corporativo">
+                <article class="product-card" data-id="buzo-basico" data-category="abrigo corporativo" data-logo="66,30,15"
+                    data-gallery="imagen/opt/buzo-cuello-base-espalda.jpg|Buzo básico, espalda|50,25,30">
                     <div class="product-image">
                         <img src="imagen/opt/buzo-cuello-base.jpg" alt="Buzo básico" width="640" height="802" loading="lazy" decoding="async">
                         <span class="product-badge">Más vendido</span>
@@ -238,7 +239,8 @@
                     </div>
                 </article>
 
-                <article class="product-card" data-id="buzo-medio-cierre" data-category="abrigo corporativo">
+                <article class="product-card" data-id="buzo-medio-cierre" data-category="abrigo corporativo" data-logo="68,32,14"
+                    data-gallery="imagen/opt/buzo-cuello-medio-cierre-espalda.jpg|Buzo cuello medio cierre, espalda|50,25,30">
                     <div class="product-image">
                         <img src="imagen/opt/buzo-cuello-medio-cierre.jpg" alt="Buzo con cuello medio cierre" width="640" height="788" loading="lazy" decoding="async">
                         <span class="product-badge">Destacado</span>
@@ -257,8 +259,8 @@
                     </div>
                 </article>
 
-                <article class="product-card" data-id="campera-forrada" data-category="abrigo industrial"
-                    data-gallery="imagen/opt/campera-gabardina-interior.jpg|Interior acolchado de la campera forrada">
+                <article class="product-card" data-id="campera-forrada" data-category="abrigo industrial" data-logo="67,22,13"
+                    data-gallery="imagen/opt/campera-gabardina-espalda.jpg|Campera forrada, espalda|50,20,28; imagen/opt/campera-gabardina-interior.jpg|Interior acolchado de la campera forrada">
                     <div class="product-image">
                         <img src="imagen/opt/campera-gabardina.jpg" alt="Campera forrada de trabajo" width="640" height="714" loading="lazy" decoding="async">
                         <span class="product-badge">Abrigo</span>
@@ -277,7 +279,8 @@
                     </div>
                 </article>
 
-                <article class="product-card" data-id="mameluco" data-category="industrial">
+                <article class="product-card" data-id="mameluco" data-category="industrial" data-logo="63,15,8"
+                    data-gallery="imagen/opt/mameluco-gabardina-espalda.jpg|Mameluco, espalda|50,14,16">
                     <div class="product-image">
                         <img src="imagen/opt/mameluco-gabardina.jpg" alt="Mameluco industrial personalizado" width="640" height="877" loading="lazy" decoding="async">
                         <span class="product-badge">Industrial</span>
@@ -296,7 +299,8 @@
                     </div>
                 </article>
 
-                <article class="product-card" data-id="chomba" data-category="corporativo">
+                <article class="product-card" data-id="chomba" data-category="corporativo" data-logo="67,30,14"
+                    data-gallery="imagen/opt/chomba-manga-corta-espalda.jpg|Chomba, espalda|50,22,30">
                     <div class="product-image">
                         <img src="imagen/opt/chomba-manga-corta.jpg" alt="Chomba corporativa personalizada" width="640" height="784" loading="lazy" decoding="async">
                         <span class="product-badge">Corporativo</span>
@@ -315,7 +319,8 @@
                     </div>
                 </article>
 
-                <article class="product-card" data-id="remera" data-category="corporativo">
+                <article class="product-card" data-id="remera" data-category="corporativo" data-logo="65,28,15"
+                    data-gallery="imagen/opt/remera-manga-corta-espalda.jpg|Remera, espalda|50,22,30">
                     <div class="product-image">
                         <img src="imagen/opt/remera-manga-corta.jpg" alt="Remera personalizada para empresas" width="640" height="774" loading="lazy" decoding="async">
                         <span class="product-badge">Personalizable</span>
@@ -334,7 +339,7 @@
                     </div>
                 </article>
 
-                <article class="product-card" data-id="camisa-manga-larga" data-category="corporativo">
+                <article class="product-card" data-id="camisa-manga-larga" data-category="corporativo" data-logo="67,30,12">
                     <div class="product-image">
                         <img src="imagen/opt/camisa-hombre.jpg" alt="Camisa manga larga" width="640" height="721" loading="lazy" decoding="async">
                         <span class="product-badge">Vestir</span>
@@ -353,7 +358,8 @@
                     </div>
                 </article>
 
-                <article class="product-card" data-id="pantalon-cargo" data-category="industrial">
+                <article class="product-card" data-id="pantalon-cargo" data-category="industrial"
+                    data-gallery="imagen/opt/pantalon-cargo-trasero.jpg|Pantalón cargo, parte trasera|62,17,9; imagen/opt/pantalon-cargo-lateral.jpg|Pantalón cargo, lateral|50,25,10">
                     <div class="product-image">
                         <img src="imagen/opt/pantalon-cargo.jpg" alt="Pantalón cargo de trabajo" width="640" height="806" loading="lazy" decoding="async">
                         <span class="product-badge">Funcional</span>
@@ -520,6 +526,7 @@
         <div class="modal-gallery">
             <div class="modal-main-image">
                 <img alt="" width="640" height="800">
+                <img class="logo-overlay" alt="Vista previa de tu logo sobre la prenda" hidden draggable="false">
             </div>
             <div class="modal-thumbs" role="group" aria-label="Fotos del producto"></div>
         </div>
@@ -532,7 +539,43 @@
                 <li>Logo bordado o estampado según tu necesidad</li>
                 <li>Confección según las especificaciones de tu empresa</li>
                 <li>Entrega estimada de 30 a 60 días, con envío a todo el país</li>
+                <li>Pedido mínimo de 10 unidades por prenda</li>
             </ul>
+
+            <!-- Vista previa con el logo del cliente -->
+            <div class="logo-tool">
+                <div class="logo-tool-head">
+                    <strong>Probá cómo queda con tu logo</strong>
+                    <label class="logo-upload">
+                        <input type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+                        <span class="logo-upload-text">Subir mi logo</span>
+                    </label>
+                </div>
+                <p class="logo-tool-note">Tu logo no se envía a ningún lado: solo se ve en tu navegador.</p>
+                <p class="logo-tool-error" role="alert"></p>
+                <p class="logo-tool-hint logo-tool-nospot" hidden>Esta foto no admite logo. Elegí otra foto para verlo.</p>
+
+                <div class="logo-controls" hidden>
+                    <div class="logo-positions" role="group" aria-label="Ubicación del logo">
+                        <button type="button" data-pos="left" aria-pressed="false">Izquierda</button>
+                        <button type="button" data-pos="center" aria-pressed="false">Centro</button>
+                        <button type="button" data-pos="right" aria-pressed="true">Derecha</button>
+                    </div>
+                    <label class="logo-size">
+                        Tamaño
+                        <input type="range" min="50" max="200" value="100" step="5">
+                    </label>
+                    <div class="logo-options">
+                        <label class="logo-check">
+                            <input type="checkbox" name="quitar-fondo" checked>
+                            Quitar fondo blanco
+                        </label>
+                        <button type="button" class="logo-remove">Quitar logo</button>
+                    </div>
+                    <p class="logo-tool-hint">También podés arrastrar el logo sobre la foto.</p>
+                </div>
+            </div>
+
             <div class="modal-actions">
                 <button type="button" class="product-add modal-add">Agregar al pedido</button>
                 <a class="modal-ask" target="_blank" rel="noopener noreferrer" href="#">Consultar por WhatsApp</a>
@@ -591,7 +634,10 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
                 Enviar pedido por WhatsApp
             </button>
-            <button type="button" class="order-mail">o enviarlo por email</button>
+            <button type="button" class="order-email">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-email"/></svg>
+                Enviar pedido por email
+            </button>
         </div>
     </form>
 </aside>
@@ -607,7 +653,7 @@
             <div class="order-item-fields">
                 <label>
                     Cantidad
-                    <input type="number" name="cantidad" min="1" step="1" inputmode="numeric">
+                    <input type="number" name="cantidad" min="10" step="1" inputmode="numeric">
                 </label>
                 <label>
                     Logo
@@ -618,6 +664,7 @@
                         <option>A definir</option>
                     </select>
                 </label>
+                <p class="order-item-min order-item-wide" hidden>El pedido mínimo es de 10 unidades por prenda.</p>
                 <label class="order-item-wide">
                     Color / talles
                     <input type="text" name="detalle" placeholder="Ej: azul marino, S a XL">
@@ -631,6 +678,10 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="icon-whatsapp" viewBox="0 0 24 24">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.89-9.884 2.64.001 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.478-8.413"/>
+    </symbol>
+    <!-- Ícono de sobre para el email -->
+    <symbol id="icon-email" viewBox="0 0 24 24">
+        <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.4l8 5.1 8-5.1V7zm16 2.8-7.5 4.8a1 1 0 0 1-1 0L4 9.8V17h16z"/>
     </symbol>
 </svg>
 
