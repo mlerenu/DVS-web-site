@@ -4,49 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIVISEEM | Uniformes para empresas</title>
-    <link rel="icon" type="image/png" href="imagen/logos/dvs.jpg">
+    <meta name="description" content="Fabricamos uniformes y ropa de trabajo para empresas: buzos, camperas, mamelucos, chombas, camisas y pantalones con tu logo bordado o estampado. Envíos a todo el país.">
+    <meta name="theme-color" content="#FF6B00">
+    <link rel="canonical" href="https://diviseem.com.ar/">
+
+    <!-- Vista previa al compartir (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="DIVISEEM">
+    <meta property="og:title" content="DIVISEEM | Uniformes para empresas">
+    <meta property="og:description" content="Confección a medida, control de calidad constante y entrega puntual a todo el país.">
+    <meta property="og:url" content="https://diviseem.com.ar/">
+    <meta property="og:image" content="https://diviseem.com.ar/imagen/opt/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="imagen/opt/favicon.png">
+    <link rel="apple-touch-icon" href="imagen/opt/favicon.png">
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="imagen/opt/primera-imagen.jpg">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Datos estructurados para Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "DIVISEEM SAS",
+        "description": "Producción y fabricación de indumentaria corporativa y de trabajo para empresas.",
+        "url": "https://diviseem.com.ar/",
+        "logo": "https://diviseem.com.ar/imagen/opt/logo-diviseem.png",
+        "image": "https://diviseem.com.ar/imagen/opt/og-image.jpg",
+        "telephone": "+54 9 3543 532037",
+        "email": "comercial@diviseem.com.ar",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Saavedra 50",
+            "addressLocality": "Unquillo",
+            "addressRegion": "Córdoba",
+            "addressCountry": "AR"
+        },
+        "areaServed": "AR"
+    }
+    </script>
+
+    <script src="script.js" defer></script>
 </head>
-
-<a
-    class="whatsapp-float"
-    href="https://wa.me/5493543532037?text=Hola%2C%20quiero%20consultar%20por%20ropa%20de%20trabajo"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contactar por WhatsApp"
->
-    <svg
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    focusable="false"
->
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.89-9.884 2.64.001 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.478-8.413"/>
-</svg>
-
-</a>
-
 
 <body>
 
-   <header class="header">
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+<header class="header">
     <div class="container nav-container">
-        <a href="#" class="logo">
-            <img 
-                src="imagen/logos/logo-diviseem2.png" 
+        <a href="#top" class="logo" aria-label="DIVISEEM, volver al inicio">
+            <img
+                src="imagen/opt/logo-diviseem.png"
                 alt="Logo de Diviseem"
+                width="400" height="154"
             >
         </a>
 
-        <nav class="nav">
-            <ul class="nav-menu">
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" aria-label="Principal">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#nosotros">Sobre nosotros</a></li>
                 <li><a href="#proceso">Cómo trabajamos</a></li>
                 <li><a href="#elegirnos">Por qué elegirnos</a></li>
-                <li><a href="#productos">Productos destacados</a></li>
+                <li><a href="#productos">Productos</a></li>
                 <li><a href="#clientes">Clientes</a></li>
                 <li>
                     <a href="#contacto" class="btn-primary">
@@ -58,21 +91,27 @@
     </div>
 </header>
 
+<main id="contenido">
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="top">
         <div class="container hero-grid">
             <div class="hero-text">
                 <span class="hero-badge">Indumentaria Corporativa e Industrial</span>
                 <h1>Uniformes para empresas</h1>
                 <p>Confección a medida, control de calidad constante y entrega puntual a todo el país.</p>
                 <div class="hero-btns">
-                    <a href="#contacto" class="btn-primary">Solicitar cotización</a>
+                    <a href="#productos" class="btn-primary">Armar mi pedido</a>
                     <a href="#clientes" class="btn-outline">Ver clientes</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="imagen/primera-imagen.jpg" alt="Confección y trabajo industrial Diviseem">
+                <img
+                    src="imagen/opt/primera-imagen.jpg"
+                    alt="Confección y trabajo industrial Diviseem"
+                    width="1200" height="1800"
+                    fetchpriority="high"
+                >
             </div>
         </div>
     </section>
@@ -82,7 +121,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="imagen/sobre-nosotros.jpg" alt="Producción textil Diviseem">
+                    <img src="imagen/opt/sobre-nosotros.jpg" alt="Producción textil Diviseem" width="1200" height="674" loading="lazy" decoding="async">
                 </div>
                 <div class="about-content">
                     <h2>Sobre nosotros</h2>
@@ -119,12 +158,12 @@
                 </div>
                 <div class="process-card">
                     <div class="process-num">02</div>
-                    <h3>Confección & Personalización</h3>
+                    <h3>Confección &amp; Personalización</h3>
                     <p>Utilizamos materia prima de primera calidad y una red de talleres comprometidos. Tu logo se puede bordar, estampar o aplicar según tu necesidad.</p>
                 </div>
                 <div class="process-card">
                     <div class="process-num">03</div>
-                    <h3>Entrega & Seguimiento</h3>
+                    <h3>Entrega &amp; Seguimiento</h3>
                     <p>Llegamos a todo el país mediante empresas de transporte con seguimiento. La fecha de entrega se estipula de 30 a 60 días según lo acordado.</p>
                 </div>
             </div>
@@ -157,207 +196,130 @@
             </div>
         </div>
     </section>
-    
-<!-- Productos destacados -->
-<section id="productos" class="featured-products">
-    <div class="container">
-        <div class="section-title">
-            <span class="section-subtitle">Nuestra selección</span>
-            <h2>Productos más elegidos</h2>
-            <p>
-                Conocé algunas de las prendas más vendidas.
-                Todos nuestros productos se fabrican según las especificaciones técnicas del cliente.
-            </p>
+
+    <!-- Productos destacados -->
+    <section id="productos" class="featured-products">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Armá tu pedido</span>
+                <h2>Productos más elegidos</h2>
+                <p>
+                    Sumá las prendas que necesitás, indicá cantidades y personalización,
+                    y envianos el pedido por WhatsApp en un solo paso.
+                    Todos nuestros productos se fabrican según las especificaciones técnicas del cliente.
+                </p>
+            </div>
+
+            <div class="product-filters" role="group" aria-label="Filtrar productos">
+                <button type="button" class="filter-btn is-active" data-filter="todos" aria-pressed="true">Todos</button>
+                <button type="button" class="filter-btn" data-filter="abrigo" aria-pressed="false">Abrigo</button>
+                <button type="button" class="filter-btn" data-filter="corporativo" aria-pressed="false">Corporativo</button>
+                <button type="button" class="filter-btn" data-filter="industrial" aria-pressed="false">Industrial</button>
+            </div>
+
+            <div class="products-grid">
+
+                <article class="product-card" data-id="buzo-basico" data-category="abrigo corporativo">
+                    <div class="product-image">
+                        <img src="imagen/opt/buzo-cuello-base.jpg" alt="Buzo básico" width="640" height="802" loading="lazy" decoding="async">
+                        <span class="product-badge">Más vendido</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Buzo básico</h3>
+                        <p>Prenda cómoda y versátil, ideal para uniformes corporativos, equipos de trabajo y uso diario.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="buzo-medio-cierre" data-category="abrigo corporativo">
+                    <div class="product-image">
+                        <img src="imagen/opt/buzo-cuello-medio-cierre.jpg" alt="Buzo con cuello medio cierre" width="640" height="788" loading="lazy" decoding="async">
+                        <span class="product-badge">Destacado</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Buzo cuello medio cierre</h3>
+                        <p>Una opción práctica y abrigada para el trabajo diario.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="campera-forrada" data-category="abrigo industrial">
+                    <div class="product-image">
+                        <img src="imagen/opt/campera-gabardina.jpg" alt="Campera forrada de trabajo" width="640" height="714" loading="lazy" decoding="async">
+                        <span class="product-badge">Abrigo</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Campera forrada</h3>
+                        <p>Diseñada para brindar abrigo y protección durante jornadas laborales en ambientes fríos o al aire libre.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="mameluco" data-category="industrial">
+                    <div class="product-image">
+                        <img src="imagen/opt/mameluco-gabardina.jpg" alt="Mameluco industrial personalizado" width="640" height="877" loading="lazy" decoding="async">
+                        <span class="product-badge">Industrial</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Mameluco</h3>
+                        <p>Uniforme resistente y funcional para trabajos industriales, logísticos, técnicos y operativos.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="chomba" data-category="corporativo">
+                    <div class="product-image">
+                        <img src="imagen/opt/chomba-manga-corta.jpg" alt="Chomba corporativa personalizada" width="640" height="784" loading="lazy" decoding="async">
+                        <span class="product-badge">Corporativo</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Chomba</h3>
+                        <p>Una alternativa cómoda y elegante para representar la identidad visual de tu empresa.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="remera" data-category="corporativo">
+                    <div class="product-image">
+                        <img src="imagen/opt/remera-manga-corta.jpg" alt="Remera personalizada para empresas" width="640" height="774" loading="lazy" decoding="async">
+                        <span class="product-badge">Personalizable</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Remera</h3>
+                        <p>Prenda liviana y cómoda.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="camisa-manga-larga" data-category="corporativo">
+                    <div class="product-image">
+                        <img src="imagen/opt/camisa-hombre.jpg" alt="Camisa manga larga" width="640" height="721" loading="lazy" decoding="async">
+                        <span class="product-badge">Vestir</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Camisa manga larga</h3>
+                        <p>Camisa manga larga ideal para oficina y equipos de trabajo que buscan una imagen profesional.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="pantalon-cargo" data-category="industrial">
+                    <div class="product-image">
+                        <img src="imagen/opt/pantalon-cargo.jpg" alt="Pantalón cargo de trabajo" width="640" height="806" loading="lazy" decoding="async">
+                        <span class="product-badge">Funcional</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Pantalón cargo</h3>
+                        <p>Pantalón resistente y funcional, con múltiples bolsillos para facilitar las tareas durante la jornada laboral.</p>
+                        <button type="button" class="product-add">Agregar al pedido</button>
+                    </div>
+                </article>
+
+            </div>
         </div>
+    </section>
 
-        <div class="products-grid">
-
-            <!-- Producto 1: Buzo básico -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img 
-                        src="imagen/buzo-cuello-base.png" 
-                        alt="Buzo básico"
-                    >
-                    <span class="product-badge">Más vendido</span>
-                </div>
-
-                <div class="product-content">
-                    <h3>Buzo básico</h3>
-                    <p>
-                        Prenda cómoda y versátil, ideal para uniformes corporativos,
-                        equipos de trabajo y uso diario.
-                    </p>
-                    <a href="#contacto" class="product-link">
-                        Solicitar cotización <span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Producto 2: Buzo cuello medio cierre -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img 
-                        src="imagen/buzo-cuello-medio-cierre.png" 
-                        alt="Buzo con cuello medio cierre"
-                    >
-                    <span class="product-badge">Destacado</span>
-                </div>
-
-                <div class="product-content">
-                    <h3>Buzo cuello medio cierre</h3>
-                    <p>
-                        Una opción práctica y abrigada para el trabajo diario.
-                    </p>
-                    <a href="#contacto" class="product-link">
-                        Solicitar cotización <span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Producto 3: Campera forrada -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img 
-                        src="imagen/campera-gabardina.png" 
-                        alt="Campera forrada de trabajo"
-                    >
-                    <span class="product-badge">Abrigo</span>
-                </div>
-
-                <div class="product-content">
-                    <h3>Campera forrada</h3>
-                    <p>
-                        Diseñada para brindar abrigo y protección durante jornadas
-                        laborales en ambientes fríos o al aire libre.
-                    </p>
-                    <a href="#contacto" class="product-link">
-                        Solicitar cotización <span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Producto 4: Mameluco -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img 
-                        src="imagen/mameluco-gabardina.png" 
-                        alt="Mameluco industrial personalizado"
-                    >
-                    <span class="product-badge">Industrial</span>
-                </div>
-
-                <div class="product-content">
-                    <h3>Mameluco</h3>
-                    <p>
-                        Uniforme resistente y funcional para trabajos industriales,
-                        logísticos, técnicos y operativos.
-                    </p>
-                    <a href="#contacto" class="product-link">
-                        Solicitar cotización <span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Producto 5: Chomba -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img 
-                        src="imagen/chomba-manga-corta.png" 
-                        alt="Chomba corporativa personalizada"
-                    >
-                    <span class="product-badge">Corporativo</span>
-                </div>
-
-                <div class="product-content">
-                    <h3>Chomba</h3>
-                    <p>
-                        Una alternativa cómoda y elegante para representar la identidad
-                        visual de tu empresa.
-                    </p>
-                    <a href="#contacto" class="product-link">
-                        Solicitar cotización <span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Producto 6: Remera -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img 
-                        src="imagen/remera-manga-corta.png" 
-                        alt="Remera personalizada para empresas"
-                    >
-                    <span class="product-badge">Personalizable</span>
-                </div>
-
-                <div class="product-content">
-                    <h3>Remera</h3>
-                    <p>
-                        Prenda liviana y cómoda.
-                    </p>
-                    <a href="#contacto" class="product-link">
-                        Solicitar cotización <span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Producto 7: Camisa manga larga -->
-<article class="product-card">
-    <div class="product-image">
-        <img 
-            src="imagen/camisa-hombre.png" 
-            alt="Camisa manga larga"
-        >
-        <span class="product-badge">Vestir</span>
-    </div>
-
-    <div class="product-content">
-        <h3>Camisa manga larga</h3>
-        <p>
-            Camisa manga larga ideal para oficina y equipos de trabajo
-            que buscan una imagen profesional.
-        </p>
-        <a href="#contacto" class="product-link">
-            Solicitar cotización <span>→</span>
-        </a>
-    </div>
-</article>
-
-<!-- Producto 8: Pantalón cargo -->
-<article class="product-card">
-    <div class="product-image">
-        <img 
-            src="imagen/pantalon-cargo.png" 
-            alt="Pantalón cargo de trabajo"
-        >
-        <span class="product-badge">Funcional</span>
-    </div>
-
-    <div class="product-content">
-        <h3>Pantalón cargo</h3>
-        <p>
-            Pantalón resistente y funcional, con múltiples bolsillos
-            para facilitar las tareas durante la jornada laboral.
-        </p>
-        <a href="#contacto" class="product-link">
-            Solicitar cotización <span>→</span>
-        </a>
-    </div>
-</article>
-
-        </div>
-        <!-- Fin de products-grid -->
-
-    </div>
-    <!-- Fin de container -->
-
-</section>
-<!-- Fin de Productos destacados -->
-
-
-<!-- Clientes -->
-
+    <!-- Clientes -->
     <section id="clientes" class="clients">
         <div class="container">
             <div class="section-title">
@@ -366,80 +328,71 @@
             </div>
             <div class="clients-grid">
                 <div class="client-logo">
-                    <img src="imagen/logos/logo-arcor.png" alt="Arcor">
+                    <img src="imagen/opt/logo-arcor.png" alt="Arcor" width="360" height="240" loading="lazy" decoding="async">
                 </div>
                 <div class="client-logo">
-                    <img src="imagen/logos/logo-klockner.png" alt="Klockner">
+                    <img src="imagen/logos/logo-klockner.png" alt="Klockner" width="450" height="180" loading="lazy" decoding="async">
                 </div>
                 <div class="client-logo">
-                    <img src="imagen/logos/logo-cartocor.png" alt="Cartocor">
+                    <img src="imagen/opt/logo-cartocor.png" alt="Cartocor" width="360" height="257" loading="lazy" decoding="async">
                 </div>
                 <div class="client-logo">
-                    <img src="imagen/logos/logo-darplast.png" alt="Darplast">
+                    <img src="imagen/opt/logo-darplast.png" alt="Darplast" width="360" height="206" loading="lazy" decoding="async">
                 </div>
                 <div class="client-logo">
-                    <img src="imagen/logos/logo-gianelli.png" alt="Gianelli">
+                    <img src="imagen/opt/logo-gianelli.png" alt="Gianelli" width="360" height="120" loading="lazy" decoding="async">
                 </div>
                 <div class="client-logo">
-                    <img src="imagen/logos/logo-gieco.jpg" alt="Gieco">
+                    <img src="imagen/logos/logo-gieco.jpg" alt="Gieco" width="447" height="447" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto / Google Form -->
+    <!-- Contacto -->
     <section id="contacto">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
                     <h2>¿Listo para solicitar tu presupuesto?</h2>
-                    <p>Completá el formulario a continuación con los datos de tu empresa y nos pondremos en contacto a la brevedad para brindarte una solución a medida.</p>
+                    <p>Elegí las prendas, indicá cantidades y cómo querés tu logo, y te respondemos por WhatsApp con una propuesta a medida.</p>
                     <ul class="contact-details">
-    
-</ul>
-
-
+                        <li><span class="contact-icon">◉</span><a href="https://wa.me/5493543532037" target="_blank" rel="noopener noreferrer">+54 9 3543 532037</a></li>
+                        <li><span class="contact-icon">✉</span><a href="mailto:comercial@diviseem.com.ar">comercial@diviseem.com.ar</a></li>
+                    </ul>
                 </div>
                 <div class="form-container">
-                    <!-- Formulario de Google integrado -->
-                   <div class="form-button-card">
-    <div class="form-button-icon"></div>
-
-    <h3>¿Querés solicitar un presupuesto?</h3>
-
-    <p>
-        Completá nuestro formulario y nos pondremos en contacto a la brevedad.
-    </p>
-
-    <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSf4NMpx80Frhca-XFG-DCSsyNxVlrALN3_JxJvQ-MLPq5OMsg/viewform?pli=1"
-        class="form-button"
-        target="_blank"
-        rel="noopener noreferrer">
-        Formulario para nuevos clientes
-        <span>→</span>
-    </a>
-</div>
-
+                    <div class="form-button-card">
+                        <h3>Armá tu pedido online</h3>
+                        <p>
+                            Sumá productos desde el catálogo y envianos todo el detalle por WhatsApp.
+                            Sin registrarte y sin compromiso.
+                        </p>
+                        <a href="#productos" class="form-button" data-open-order>
+                            Armar mi pedido
+                            <span>→</span>
+                        </a>
+                        <p class="form-alt">
+                            ¿Primera vez con nosotros?
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4NMpx80Frhca-XFG-DCSsyNxVlrALN3_JxJvQ-MLPq5OMsg/viewform" target="_blank" rel="noopener noreferrer">Completá el formulario para nuevos clientes</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+</main>
+
 <!-- Footer -->
-    
-   <footer>
+<footer>
     <div class="container">
         <div class="footer-grid">
 
             <div class="footer-brand">
-                <a href="#" class="footer-logo">
-                    <img
-                        src="imagen/logos/logo-diviseem-footer.png"
-                        alt="Logo de Diviseem"
-                    >
+                <a href="#top" class="footer-logo" aria-label="DIVISEEM, volver al inicio">
+                    <img src="imagen/opt/logo-diviseem-footer.png" alt="Logo de Diviseem" width="320" height="124" loading="lazy" decoding="async">
                 </a>
-
                 <p>
                     Especialistas en la producción y fabricación de
                     indumentaria corporativa y de trabajo para empresas.
@@ -451,32 +404,32 @@
                 <p><a href="#nosotros">Sobre nosotros</a></p>
                 <p><a href="#proceso">Proceso</a></p>
                 <p><a href="#elegirnos">Por qué elegirnos</a></p>
+                <p><a href="#productos">Productos</a></p>
+                <p><a href="#clientes">Clientes</a></p>
             </div>
 
             <div class="footer-contact">
-    <h4>Contacto</h4>
+                <h4>Contacto</h4>
 
-    <div class="footer-contact-item">
-        <span class="contact-icon location-icon">⌖</span>
-        <span>Saavedra 50 - Unquillo - Córdoba</span>
-    </div>
+                <div class="footer-contact-item">
+                    <span class="contact-icon location-icon">⌖</span>
+                    <span>Saavedra 50 - Unquillo - Córdoba</span>
+                </div>
 
-    <div class="footer-contact-item">
-        <span class="contact-icon whatsapp-icon">◉</span>
-        <a href="https://wa.me/543543532037" target="_blank">
-            +54 3543 532037
-        </a>
-    </div>
+                <div class="footer-contact-item">
+                    <span class="contact-icon whatsapp-icon">◉</span>
+                    <a href="https://wa.me/5493543532037" target="_blank" rel="noopener noreferrer">
+                        +54 9 3543 532037
+                    </a>
+                </div>
 
-    <div class="footer-contact-item">
-        <span class="contact-icon mail-icon">✉</span>
-        <a href="mailto:comercial@diviseem.com.ar">
-            comercial@diviseem.com.ar
-        </a>
-    </div>
-</div>
-
-
+                <div class="footer-contact-item">
+                    <span class="contact-icon mail-icon">✉</span>
+                    <a href="mailto:comercial@diviseem.com.ar">
+                        comercial@diviseem.com.ar
+                    </a>
+                </div>
+            </div>
 
         </div>
 
@@ -486,6 +439,108 @@
     </div>
 </footer>
 
+<!-- Botón flotante: pedido en curso -->
+<button type="button" class="order-fab" data-open-order hidden>
+    <span class="order-fab-label">Ver mi pedido</span>
+    <span class="order-fab-count" aria-live="polite">0</span>
+</button>
+
+<!-- Panel del pedido -->
+<div class="order-overlay" data-close-order hidden></div>
+<aside class="order-panel" id="order-panel" role="dialog" aria-modal="true" aria-labelledby="order-title" hidden>
+    <div class="order-header">
+        <h2 id="order-title">Tu pedido</h2>
+        <button type="button" class="order-close" data-close-order aria-label="Cerrar">×</button>
+    </div>
+
+    <form class="order-form" novalidate>
+        <div class="order-body">
+            <p class="order-empty">
+                Todavía no agregaste prendas.
+                <a href="#productos" data-close-order>Ver productos</a>
+            </p>
+
+            <ul class="order-items"></ul>
+
+            <fieldset class="order-company">
+                <legend>Datos de contacto</legend>
+                <label>
+                    Empresa *
+                    <input type="text" name="empresa" autocomplete="organization" required>
+                </label>
+                <label>
+                    Nombre y apellido *
+                    <input type="text" name="nombre" autocomplete="name" required>
+                </label>
+                <label>
+                    Localidad / provincia
+                    <input type="text" name="localidad" autocomplete="address-level2">
+                </label>
+                <label>
+                    Comentarios
+                    <textarea name="comentarios" rows="3" placeholder="Fecha estimada, colores corporativos, talles, etc."></textarea>
+                </label>
+            </fieldset>
+        </div>
+
+        <div class="order-footer">
+            <p class="order-error" role="alert"></p>
+            <button type="submit" class="order-send">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+                Enviar pedido por WhatsApp
+            </button>
+            <button type="button" class="order-mail">o enviarlo por email</button>
+        </div>
+    </form>
+</aside>
+
+<template id="order-item-template">
+    <li class="order-item">
+        <img class="order-item-img" alt="" width="64" height="64">
+        <div class="order-item-main">
+            <div class="order-item-top">
+                <strong class="order-item-name"></strong>
+                <button type="button" class="order-item-remove">Quitar</button>
+            </div>
+            <div class="order-item-fields">
+                <label>
+                    Cantidad
+                    <input type="number" name="cantidad" min="1" step="1" inputmode="numeric">
+                </label>
+                <label>
+                    Logo
+                    <select name="logo">
+                        <option>Bordado</option>
+                        <option>Estampado</option>
+                        <option>Sin logo</option>
+                        <option>A definir</option>
+                    </select>
+                </label>
+                <label class="order-item-wide">
+                    Color / talles
+                    <input type="text" name="detalle" placeholder="Ej: azul marino, S a XL">
+                </label>
+            </div>
+        </div>
+    </li>
+</template>
+
+<!-- Ícono de WhatsApp reutilizable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.89-9.884 2.64.001 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.478-8.413"/>
+    </symbol>
+</svg>
+
+<a
+    class="whatsapp-float"
+    href="https://wa.me/5493543532037?text=Hola%2C%20quiero%20consultar%20por%20ropa%20de%20trabajo"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+</a>
 
 </body>
 </html>
