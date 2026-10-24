@@ -1,0 +1,3 @@
+# Netlify: el subdominio .netlify.app redirige al dominio principal para evitar contenido duplicado en Google.
+# (Las vistas previas de los pull requests usan otra dirección y no se ven afectadas.)
+https://extraordinary-bublanina-f933b0.netlify.app/*  https://diviseem.com.ar/:splat  301!

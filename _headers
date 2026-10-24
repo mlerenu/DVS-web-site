@@ -1,0 +1,5 @@
+# Netlify: cabeceras HTTP
+# Las imágenes se guardan una semana en el navegador; si cambia una foto con el mismo nombre,
+# los visitantes que ya la tenían la ven actualizada como máximo a la semana.
+/imagen/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

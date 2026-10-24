@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIVISEEM | Uniformes para empresas</title>
-    <meta name="description" content="Fabricamos uniformes y ropa de trabajo para empresas: buzos, camperas, mamelucos, chombas, camisas y pantalones con tu logo bordado o estampado. Envíos a todo el país.">
+    <title>Ropa de trabajo y uniformes para empresas | DIVISEEM Córdoba</title>
+    <meta name="description" content="Fábrica de ropa de trabajo y uniformes para empresas en Córdoba. Buzos, camperas, mamelucos y chombas con tu logo bordado o estampado. Envíos a todo el país.">
     <meta name="theme-color" content="#FF6B00">
     <link rel="canonical" href="https://diviseem.com.ar/">
 
@@ -12,16 +12,18 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
     <meta property="og:site_name" content="DIVISEEM">
-    <meta property="og:title" content="DIVISEEM | Uniformes para empresas">
-    <meta property="og:description" content="Confección a medida, control de calidad constante y entrega puntual a todo el país.">
+    <meta property="og:title" content="DIVISEEM | Ropa de trabajo y uniformes para empresas">
+    <meta property="og:description" content="Confección a medida en Córdoba, con tu logo bordado o estampado. Control de calidad constante y entrega puntual a todo el país.">
     <meta property="og:url" content="https://diviseem.com.ar/">
     <meta property="og:image" content="https://diviseem.com.ar/imagen/opt/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" type="image/png" href="imagen/opt/favicon.png">
-    <link rel="apple-touch-icon" href="imagen/opt/favicon.png">
+    <!-- Google pide un favicon cuadrado de un tamaño múltiplo de 48 px -->
+    <link rel="icon" type="image/png" sizes="96x96" href="imagen/opt/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="imagen/opt/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagen/opt/apple-touch-icon.png">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,22 +36,57 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "DIVISEEM SAS",
-        "description": "Producción y fabricación de indumentaria corporativa y de trabajo para empresas.",
-        "url": "https://diviseem.com.ar/",
-        "logo": "https://diviseem.com.ar/imagen/opt/logo-diviseem.png",
-        "image": "https://diviseem.com.ar/imagen/opt/og-image.jpg",
-        "telephone": "+54 9 3543 532037",
-        "email": "comercial@diviseem.com.ar",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Saavedra 50",
-            "addressLocality": "Unquillo",
-            "addressRegion": "Córdoba",
-            "addressCountry": "AR"
-        },
-        "areaServed": "AR"
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://diviseem.com.ar/#empresa",
+                "name": "DIVISEEM SAS",
+                "alternateName": "DIVISEEM",
+                "description": "Fábrica de ropa de trabajo y uniformes para empresas en Córdoba: buzos, camperas, mamelucos, chombas, remeras, camisas y pantalones con logo bordado o estampado. Envíos a todo el país.",
+                "url": "https://diviseem.com.ar/",
+                "logo": "https://diviseem.com.ar/imagen/opt/logo-diviseem.png",
+                "image": [
+                    "https://diviseem.com.ar/imagen/opt/og-image.jpg",
+                    "https://diviseem.com.ar/imagen/opt/sobre-nosotros.jpg"
+                ],
+                "telephone": "+54 9 3543 532037",
+                "email": "comercial@diviseem.com.ar",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Saavedra 50",
+                    "addressLocality": "Unquillo",
+                    "addressRegion": "Córdoba",
+                    "addressCountry": "AR"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Argentina"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "sales",
+                    "telephone": "+54 9 3543 532037",
+                    "email": "comercial@diviseem.com.ar",
+                    "availableLanguage": "es"
+                },
+                "knowsAbout": [
+                    "Ropa de trabajo",
+                    "Uniformes para empresas",
+                    "Indumentaria corporativa",
+                    "Indumentaria industrial",
+                    "Bordado de logos",
+                    "Estampado de logos"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://diviseem.com.ar/#sitio",
+                "url": "https://diviseem.com.ar/",
+                "name": "DIVISEEM",
+                "inLanguage": "es-AR",
+                "publisher": { "@id": "https://diviseem.com.ar/#empresa" }
+            }
+        ]
     }
     </script>
 
@@ -98,8 +135,8 @@
         <div class="container hero-grid">
             <div class="hero-text">
                 <span class="hero-badge">Indumentaria Corporativa e Industrial</span>
-                <h1>Uniformes para empresas</h1>
-                <p>Confección a medida, control de calidad constante y entrega puntual a todo el país.</p>
+                <h1>Ropa de trabajo y uniformes para empresas</h1>
+                <p>Confección a medida en Córdoba, con tu logo bordado o estampado. Control de calidad constante y entrega puntual a todo el país.</p>
                 <div class="hero-btns">
                     <a href="#productos" class="btn-primary">Armar mi pedido</a>
                     <a href="#clientes" class="btn-outline">Ver clientes</a>
