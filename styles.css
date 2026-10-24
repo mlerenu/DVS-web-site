@@ -529,8 +529,38 @@ section {
     line-height: 1.65;
 }
 
-.product-add {
+/* Los datos técnicos se muestran en la ficha, no en la tarjeta */
+.product-card .product-specs {
+    display: none;
+}
+
+.product-image img {
+    cursor: zoom-in;
+}
+
+.product-actions {
     margin-top: auto;
+    display: grid;
+    gap: 6px;
+}
+
+.product-details {
+    padding: 6px;
+    border: none;
+    background: none;
+    color: var(--dark);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.product-details:hover {
+    color: var(--primary);
+}
+
+.product-add {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -554,6 +584,269 @@ section {
 .product-add[aria-pressed="true"] {
     background: var(--primary);
     color: var(--white);
+}
+
+/* =========================
+   Ficha de producto
+========================= */
+
+.product-modal {
+    width: min(920px, calc(100% - 32px));
+    max-height: calc(100% - 32px);
+    margin: auto;
+    padding: 0;
+    border: none;
+    border-radius: 16px;
+    background: var(--white);
+    color: var(--body-text);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+}
+
+.product-modal[open] {
+    animation: modal-in 0.22s ease;
+}
+
+.product-modal::backdrop {
+    background: rgba(20, 22, 24, 0.55);
+}
+
+@keyframes modal-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+
+/* Sticky para que no se pierda al scrollear la ficha en celular */
+.modal-close {
+    position: sticky;
+    top: 12px;
+    z-index: 2;
+    display: block;
+    margin: 12px 12px -52px auto;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--dark);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.modal-close:hover {
+    background: var(--light-bg);
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-gallery {
+    padding: 20px;
+    background: var(--light-bg);
+}
+
+.modal-main-image {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #EEF0F2;
+    aspect-ratio: 4 / 5;
+}
+
+.modal-main-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.modal-thumbs:empty {
+    display: none;
+}
+
+.modal-thumb {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.modal-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-thumb:hover,
+.modal-thumb[aria-pressed="true"] {
+    opacity: 1;
+}
+
+.modal-thumb[aria-pressed="true"] {
+    border-color: var(--primary);
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 32px 32px;
+}
+
+.modal-badge {
+    position: static;
+    align-self: flex-start;
+    margin-bottom: 12px;
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.modal-info h2 {
+    margin-bottom: 12px;
+    color: var(--dark);
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.modal-description {
+    margin-bottom: 22px;
+    font-size: 16px;
+}
+
+.modal-specs {
+    display: grid;
+    gap: 0;
+    margin-bottom: 22px;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-specs div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-specs dt {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.modal-specs dd {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.modal-extras {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 26px;
+    list-style: none;
+    font-size: 14px;
+}
+
+.modal-extras li {
+    position: relative;
+    padding-left: 24px;
+}
+
+.modal-extras li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.modal-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.modal-actions .product-add {
+    padding: 14px 16px;
+    font-size: 1rem;
+}
+
+.modal-ask {
+    color: #128C4A;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Proveedores */
+.suppliers {
+    padding: 64px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.suppliers-inner {
+    display: grid;
+    gap: 32px;
+    text-align: center;
+}
+
+.suppliers-text h2 {
+    margin-bottom: 10px;
+    color: var(--dark);
+    font-size: 30px;
+    letter-spacing: -0.5px;
+}
+
+.suppliers-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.suppliers-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    padding: 22px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.suppliers-list img {
+    max-width: 100%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.suppliers-list li:hover img {
+    transform: scale(1.06);
 }
 
 /* Clients Section */
@@ -1209,6 +1502,18 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-main-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .modal-info {
+        padding: 24px 22px 26px;
+    }
+
     .logo img {
         width: 130px;
         height: 50px;
@@ -1255,6 +1560,34 @@ footer {
 
     .form-button-card {
         padding: 36px 22px;
+    }
+
+    .suppliers-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-modal {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .modal-gallery {
+        padding: 0;
+    }
+
+    .modal-main-image {
+        border-radius: 0;
+    }
+
+    .modal-thumbs {
+        padding: 0 16px;
+    }
+
+    .modal-info h2 {
+        font-size: 24px;
     }
 
     .whatsapp-float {

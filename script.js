@@ -125,14 +125,18 @@ function removeItem(id) {
     renderAll();
 }
 
+function setAddButton(btn, inOrder) {
+    btn.setAttribute('aria-pressed', String(inOrder));
+    btn.textContent = inOrder ? '✓ En tu pedido' : 'Agregar al pedido';
+}
+
 function renderCards() {
     productCards.forEach((card) => {
         const inOrder = Boolean(findItem(card.dataset.id));
-        const btn = card.querySelector('.product-add');
         card.classList.toggle('is-in-order', inOrder);
-        btn.setAttribute('aria-pressed', String(inOrder));
-        btn.textContent = inOrder ? '✓ En tu pedido' : 'Agregar al pedido';
+        setAddButton(card.querySelector('.product-add'), inOrder);
     });
+    if (modal.open) setAddButton(modalAdd, Boolean(findItem(modal.dataset.id)));
 }
 
 function renderFab() {
@@ -233,13 +237,89 @@ panel.addEventListener('keydown', (e) => {
 
 /* Botones de las tarjetas */
 
+function toggleItem(id) {
+    if (findItem(id)) removeItem(id);
+    else addItem(id);
+}
+
 productCards.forEach((card) => {
-    card.querySelector('.product-add').addEventListener('click', () => {
-        const id = card.dataset.id;
-        if (findItem(id)) removeItem(id);
-        else addItem(id);
-    });
+    card.querySelector('.product-add').addEventListener('click', () => toggleItem(card.dataset.id));
+    card.querySelector('.product-details').addEventListener('click', () => openModal(card));
+    card.querySelector('.product-image img').addEventListener('click', () => openModal(card));
 });
+
+/* ---------- Ficha de producto ---------- */
+
+function openModal(card) {
+    const img = card.querySelector('.product-image img');
+    const badge = card.querySelector('.product-badge');
+
+    // Foto principal + fotos extra (data-gallery="ruta|texto alternativo; ...")
+    const photos = [{ src: img.getAttribute('src'), alt: img.alt }];
+    (card.dataset.gallery || '').split(';').filter(Boolean).forEach((entry) => {
+        const [src, alt] = entry.split('|');
+        photos.push({ src: src.trim(), alt: (alt || '').trim() });
+    });
+
+    modal.dataset.id = card.dataset.id;
+    modalTitle.textContent = card.querySelector('h3').textContent.trim();
+    modalDescription.textContent = card.querySelector('.product-content p').textContent.trim();
+    modalBadge.textContent = badge ? badge.textContent.trim() : '';
+    modalBadge.hidden = !badge;
+    modalSpecs.replaceChildren(...card.querySelector('.product-specs').cloneNode(true).children);
+    modalAsk.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola DIVISEEM, quiero consultar por: ${modalTitle.textContent}`)}`;
+
+    showPhoto(photos[0]);
+    modalThumbs.replaceChildren();
+    if (photos.length > 1) {
+        photos.forEach((photo, i) => {
+            const thumb = document.createElement('button');
+            thumb.type = 'button';
+            thumb.className = 'modal-thumb';
+            thumb.setAttribute('aria-label', `Ver foto ${i + 1}`);
+            thumb.setAttribute('aria-pressed', String(i === 0));
+            const thumbImg = document.createElement('img');
+            thumbImg.src = photo.src;
+            thumbImg.alt = '';
+            thumb.appendChild(thumbImg);
+            thumb.addEventListener('click', () => {
+                modalThumbs.querySelectorAll('.modal-thumb').forEach((t) => t.setAttribute('aria-pressed', String(t === thumb)));
+                showPhoto(photo);
+            });
+            modalThumbs.appendChild(thumb);
+        });
+    }
+
+    setAddButton(modalAdd, Boolean(findItem(card.dataset.id)));
+    modal.showModal();
+    modal.scrollTop = 0;
+    document.body.classList.add('no-scroll');
+}
+
+function showPhoto(photo) {
+    modalImage.src = photo.src;
+    modalImage.alt = photo.alt;
+}
+
+const modal = document.querySelector('.product-modal');
+const modalImage = modal.querySelector('.modal-main-image img');
+const modalThumbs = modal.querySelector('.modal-thumbs');
+const modalTitle = modal.querySelector('#modal-title');
+const modalDescription = modal.querySelector('.modal-description');
+const modalBadge = modal.querySelector('.modal-badge');
+const modalSpecs = modal.querySelector('.modal-specs');
+const modalAdd = modal.querySelector('.modal-add');
+const modalAsk = modal.querySelector('.modal-ask');
+
+modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
+modal.addEventListener('close', () => document.body.classList.remove('no-scroll'));
+
+// Clic en el fondo oscuro cierra la ficha
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
+});
+
+modalAdd.addEventListener('click', () => toggleItem(modal.dataset.id));
 
 /* Cambios dentro del panel */
 
