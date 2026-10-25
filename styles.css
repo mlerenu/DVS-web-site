@@ -665,6 +665,105 @@ section {
     object-fit: cover;
 }
 
+/* Botón para ver la foto completa y flechas (las flechas solo con la foto ampliada) */
+.photo-expand,
+.photo-nav {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
+
+.photo-expand {
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.photo-expand svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.photo-expand .icon-close,
+.is-expanded .photo-expand .icon-open {
+    display: none;
+}
+
+.is-expanded .photo-expand .icon-close {
+    display: block;
+}
+
+.photo-nav {
+    top: 50%;
+    display: none;
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.photo-prev {
+    left: 12px;
+}
+
+.photo-next {
+    right: 12px;
+}
+
+.modal-main-image.is-expanded.has-several .photo-nav {
+    display: flex;
+}
+
+/* Foto completa: ocupa toda la pantalla y se ve entera, sin recortes.
+   (Selector más específico que el de la foto fija con logo en celular, que cambia la proporción) */
+.product-modal.photo-open .modal-main-image.is-expanded {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    aspect-ratio: auto;
+    border-radius: 0;
+    background: #111;
+}
+
+.modal-main-image.is-expanded > img:first-child {
+    object-fit: contain;
+    object-position: center !important;
+}
+
+.modal-main-image.is-expanded .photo-expand {
+    top: 14px;
+    right: 14px;
+    bottom: auto;
+}
+
+.modal-main-image:not(.is-expanded) > img:first-child {
+    cursor: zoom-in;
+}
+
+/* Con la foto ampliada: su contenedor queda arriba de todo y se oculta la × de la ficha */
+.product-modal.photo-open .modal-gallery {
+    z-index: 40;
+}
+
+.product-modal.photo-open .modal-close {
+    visibility: hidden;
+}
+
 /* Logo del cliente sobre la foto (posición y tamaño los calcula script.js) */
 .modal-main-image .logo-overlay {
     position: absolute;

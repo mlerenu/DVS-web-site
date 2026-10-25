@@ -276,7 +276,7 @@ function openModal(card) {
     modalSpecs.replaceChildren(...card.querySelector('.product-specs').cloneNode(true).children);
     modalAsk.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola DIVISEEM, quiero consultar por: ${modalTitle.textContent}`)}`;
 
-    showPhoto(photos[0]);
+    modalPhotos = photos;
     modalThumbs.replaceChildren();
     if (photos.length > 1) {
         photos.forEach((photo, i) => {
@@ -284,24 +284,33 @@ function openModal(card) {
             thumb.type = 'button';
             thumb.className = 'modal-thumb';
             thumb.setAttribute('aria-label', `Ver foto: ${photo.alt}`);
-            thumb.setAttribute('aria-pressed', String(i === 0));
             const thumbImg = document.createElement('img');
             thumbImg.src = photo.src;
             thumbImg.alt = '';
             thumb.appendChild(thumbImg);
-            thumb.addEventListener('click', () => {
-                modalThumbs.querySelectorAll('.modal-thumb').forEach((t) => t.setAttribute('aria-pressed', String(t === thumb)));
-                showPhoto(photo);
-            });
+            thumb.addEventListener('click', () => goToPhoto(i));
             modalThumbs.appendChild(thumb);
         });
     }
+    photoBox.classList.toggle('has-several', photos.length > 1);
+    setExpanded(false);
+    goToPhoto(0);
 
     setAddButton(modalAdd, Boolean(findItem(card.dataset.id)));
     modal.showModal();
     modal.scrollTop = 0;
     document.body.classList.add('no-scroll');
     renderLogo();
+}
+
+// Fotos de la ficha abierta y cuál se está viendo
+let modalPhotos = [];
+let photoIndex = 0;
+
+function goToPhoto(i) {
+    photoIndex = (i + modalPhotos.length) % modalPhotos.length; // las flechas dan la vuelta
+    modalThumbs.querySelectorAll('.modal-thumb').forEach((t, j) => t.setAttribute('aria-pressed', String(j === photoIndex)));
+    showPhoto(modalPhotos[photoIndex]);
 }
 
 function showPhoto(photo) {
@@ -311,6 +320,21 @@ function showPhoto(photo) {
     // Si la foto se recorta, que el recorte priorice la zona del logo
     modalImage.style.objectPosition = `50% ${photoFocusY()}%`;
     renderLogo();
+}
+
+/* Foto completa: la misma foto pasa a ocupar toda la pantalla sin recortes
+   (el logo del cliente la acompaña porque vive dentro del mismo recuadro) */
+
+function setExpanded(on) {
+    photoBox.classList.toggle('is-expanded', on);
+    modal.classList.toggle('photo-open', on);
+    photoExpandBtn.setAttribute('aria-label', on ? 'Cerrar foto completa' : 'Ver foto completa');
+    photoExpandBtn.setAttribute('aria-expanded', String(on));
+    renderLogo();
+}
+
+function isExpanded() {
+    return photoBox.classList.contains('is-expanded');
 }
 
 const modal = document.querySelector('.product-modal');
@@ -323,8 +347,49 @@ const modalSpecs = modal.querySelector('.modal-specs');
 const modalAdd = modal.querySelector('.modal-add');
 const modalAsk = modal.querySelector('.modal-ask');
 
+const photoBox = modal.querySelector('.modal-main-image');
+const photoExpandBtn = photoBox.querySelector('.photo-expand');
+
 modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
-modal.addEventListener('close', () => document.body.classList.remove('no-scroll'));
+modal.addEventListener('close', () => {
+    setExpanded(false);
+    document.body.classList.remove('no-scroll');
+});
+
+// Con la foto ampliada, Esc primero vuelve a la ficha en vez de cerrarla
+modal.addEventListener('cancel', (e) => {
+    if (!isExpanded()) return;
+    e.preventDefault();
+    setExpanded(false);
+});
+
+photoExpandBtn.addEventListener('click', () => setExpanded(!isExpanded()));
+photoBox.querySelector('.photo-prev').addEventListener('click', () => goToPhoto(photoIndex - 1));
+photoBox.querySelector('.photo-next').addEventListener('click', () => goToPhoto(photoIndex + 1));
+
+// Tocar la foto la amplía (el logo tiene su propio arrastre y no cuenta como toque)
+modalImage.addEventListener('click', () => { if (!isExpanded()) setExpanded(true); });
+
+// Deslizar el dedo a los costados cambia de foto
+let swipeStart = null;
+photoBox.addEventListener('pointerdown', (e) => {
+    if (e.target === modalImage && e.pointerType !== 'mouse') swipeStart = { x: e.clientX, y: e.clientY };
+});
+photoBox.addEventListener('pointerup', (e) => {
+    if (!swipeStart || modalPhotos.length < 2) { swipeStart = null; return; }
+    const dx = e.clientX - swipeStart.x;
+    const dy = e.clientY - swipeStart.y;
+    swipeStart = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) goToPhoto(photoIndex + (dx < 0 ? 1 : -1));
+});
+photoBox.addEventListener('pointercancel', () => { swipeStart = null; });
+
+// Flechas del teclado con la foto ampliada
+modal.addEventListener('keydown', (e) => {
+    if (!isExpanded() || modalPhotos.length < 2) return;
+    if (e.key === 'ArrowLeft') goToPhoto(photoIndex - 1);
+    if (e.key === 'ArrowRight') goToPhoto(photoIndex + 1);
+});
 
 // Clic en el fondo oscuro cierra la ficha
 modal.addEventListener('click', (e) => {
@@ -349,7 +414,6 @@ const logoSizeInput = logoTool.querySelector('.logo-size input');
 const logoBgCheck = logoTool.querySelector('[name="quitar-fondo"]');
 const logoNoSpot = logoTool.querySelector('.logo-tool-nospot');
 const logoOverlay = modal.querySelector('.logo-overlay');
-const photoBox = modal.querySelector('.modal-main-image');
 
 // { original, clean, removeBg }: el logo tal cual y sin fondo blanco, en dataURL
 let logo = loadLogo();
@@ -501,17 +565,20 @@ logoInput.addEventListener('change', async () => {
     logoUploadText.textContent = logo ? 'Cambiar logo' : 'Subir mi logo';
 });
 
-// Calcula dónde cae la foto dentro del recuadro (object-fit: cover + object-position)
+// Calcula dónde cae la foto dentro del recuadro.
+// En la ficha: object-fit cover + object-position. Ampliada: contain y centrada.
 function photoGeometry() {
     const cw = photoBox.clientWidth;
     const ch = photoBox.clientHeight;
     const nw = modalImage.naturalWidth;
     const nh = modalImage.naturalHeight;
     if (!cw || !nw) return null;
-    const s = Math.max(cw / nw, ch / nh);
+    const expanded = isExpanded();
+    const s = expanded ? Math.min(cw / nw, ch / nh) : Math.max(cw / nw, ch / nh);
     const dw = nw * s;
     const dh = nh * s;
-    return { dw, dh, ox: (cw - dw) / 2, oy: (ch - dh) * photoFocusY() / 100 };
+    const focusY = expanded ? 50 : photoFocusY();
+    return { dw, dh, ox: (cw - dw) / 2, oy: (ch - dh) * focusY / 100 };
 }
 
 function renderLogo() {
